@@ -5,18 +5,21 @@ export const FETCH_FEATURED_POSTS = {
 }
 
 export const fetchFeaturedPosts = (pageNumber = 1) => (dispatch, getState) => {
-    dispatch({
-        type: FETCH_FEATURED_POSTS.IN_PROGRESS,
+  dispatch({
+    type: FETCH_FEATURED_POSTS.IN_PROGRESS,
+  })
+  const dataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?categories=93'
+  fetch(dataURL)
+    .then(res => res.json())
+    .then((res) => {
+      dispatch({
+        type: FETCH_FEATURED_POSTS.SUCCESS,
+        featuredPosts: res,
+      })
     })
-    const dataURL = 'https://dashboard.rockwiththis.com/wp-json/wp/v2/songs?categories=93'
-    fetch(dataURL).then(res => res.json()).then((res) => {
-        dispatch({
-            type: FETCH_FEATURED_POSTS.SUCCESS,
-            featuredPosts: res,
-        })
-    }).catch((er) => {
-        dispatch({
-            type: FETCH_FEATURED_POSTS.FAILURE,
-        })
-    })
+    .catch((er) => {
+      dispatch({
+        type: FETCH_FEATURED_POSTS.FAILURE,
+      })
+  })
 }

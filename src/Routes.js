@@ -7,14 +7,14 @@ import SingleSongPage from './SingleSongPage'
 import SubmitSongPage from './SubmitSongPage'
 
 const Routes = (props) => {
-    return (
-            <Switch>
-                <Route exact path='/' render={() => <Homepage {...props} />} />
-                <Route exact path='/submit' render={() => <SubmitSongPage {...props} />} />
-                <Route exact path='/connect' render={() => <ConnectPage {...props} />} />
-                <Route path='/songs/:id' render={(p) => <SingleSongPage {...props} {...p} />} />
-            </Switch>
-    )
+  return (
+    <Switch>
+        <Route exact path='/' render={() => <Homepage {...props} />} />
+        <Route exact path='/submit' render={() => <SubmitSongPage {...props} />} />
+        <Route exact path='/connect' render={() => <ConnectPage {...props} />} />
+        <Route path='/songs/:id' render={(p) => <SingleSongPage {...props} {...p} />} />
+    </Switch>
+  )
 }
 
 export default Routes

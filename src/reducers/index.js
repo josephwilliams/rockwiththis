@@ -1,15 +1,16 @@
 import { combineReducers } from 'redux'
-import { FETCH_POSTS } from '../actions/index'
-import { FETCH_FEATURED_POSTS } from '../actions/featuredPosts'
-import { FETCH_FILTERS } from '../actions/filters'
-import { FETCH_RELATED_SONGS } from '../actions/relatedSongs'
-import posts from './posts'
-import featuredPosts from './featuredPosts'
-import queue from './queue'
-import relatedSongs from './relatedSongs'
-import filters from './filters'
+import { FETCH_POSTS } from 'actions/index'
+import { FETCH_FEATURED_POSTS } from 'actions/featuredPosts'
+import { FETCH_FILTERS } from 'actions/filters'
+import { FETCH_RELATED_SONGS } from 'actions/relatedSongs'
+import posts from 'reducers/posts'
+import featuredPosts from 'reducers/featuredPosts'
+import queue from 'reducers/queue'
+import relatedSongs from 'reducers/relatedSongs'
+import filters from 'reducers/filters'
 import update from 'react-addons-update'
 import { handleActions } from 'redux-actions'
+
 
 export const INITIAL_STATE = {
   shrinkHeader: false,
@@ -31,7 +32,6 @@ export const INITIAL_STATE = {
   filters: [],
   selectedFilters: [],
   currentlyFetchedPageNumber: 0,
-
 }
 
 const appReducers = handleActions({
