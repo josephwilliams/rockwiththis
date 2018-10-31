@@ -49,9 +49,9 @@ class AppContainer extends Component {
 const mapStateToProps = (state, ownProps) => Object.assign(state, ownProps)
 
 const mapDispatch = (dispatch) => {
-    return {
-        actions: bindActionCreators(Actions, dispatch),
-    }
+  return {
+    actions: bindActionCreators(Actions, dispatch),
+  }
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatch)(AppContainer))

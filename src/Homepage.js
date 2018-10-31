@@ -14,26 +14,26 @@ import { fetchFilters } from 'actions/filters'
 
 
 class Homepage extends Component {
-    componentWillMount() {
-      this.props.actions.clearSingleSong()
-      if (this.props.filteredPosts.length === 0) {
-        this.props.actions.fetchPosts()
-      }
+  componentWillMount() {
+    this.props.actions.clearSingleSong()
+    if (this.props.filteredPosts.length === 0) {
+      this.props.actions.fetchPosts()
     }
+  }
 
-    render() {
-        return (
-          <div>
-          <Helmet>
-            <title>Rock With This - Your New Favorite Song</title>
-          </Helmet>
-             <div className="homeContainer">
-                    <SongsContainer {...this.props} />
-                    {/*<SidebarRight />*/}
-                 </div>
-           </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+      <Helmet>
+        <title>Rock With This - Your New Favorite Song</title>
+      </Helmet>
+         <div className="homeContainer">
+            <SongsContainer {...this.props} />
+            {/*<SidebarRight />*/}
+         </div>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state, ownProps) => Object.assign(state, ownProps)

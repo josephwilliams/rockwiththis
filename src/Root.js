@@ -8,11 +8,11 @@ class Root extends Component {
   render() {
     return (
       <Provider store={this.props.store}>
-          <BrowserRouter>
-              <AppContainer>
-                  <Routes />
-              </AppContainer>
-          </BrowserRouter>
+        <BrowserRouter>
+          <AppContainer>
+            <Routes />
+          </AppContainer>
+        </BrowserRouter>
       </Provider>
     )
   }

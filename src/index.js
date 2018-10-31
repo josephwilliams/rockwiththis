@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'development') {
   window.store = store
 }
 
-ReactDOM.render((
-    <Root store={store} />
-), document.getElementById('root'),
+ReactDOM.render(
+  <Root store={store} />,
+  document.getElementById('root'),
 )

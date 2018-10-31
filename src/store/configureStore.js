@@ -1,5 +1,5 @@
 import thunk from 'redux-thunk'
-import appReducer from '../reducers/index'
+import appReducers from '../reducers/index'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { createLogger } from 'redux-logger'
 
@@ -23,13 +23,14 @@ export default function configureStore() {
     reduxLogger
   ].filter(Boolean)
   const store = createStore(
-    appReducer,
+    appReducers,
     composeEnhancers(
       applyMiddleware(...middleware)
     )
   )
   store.subscribe(() => {
     // Will be called everytime the state updates
+    // Mimics functionality of 'redux-logger' ?
   })
   return store
 }
